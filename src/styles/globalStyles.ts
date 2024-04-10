@@ -5,17 +5,6 @@ export default css`
   /* Color Palette */
   ${colorPalette}
 
-  /* Fonts */
-  @font-face {
-    font-family: 'NotoSansKR';
-    font-style: normal;
-    src:
-      url('../assets/fonts/sebset-NotoSansKR.woff2') format('woff2'),
-      url('../assets/fonts/subset-NotoSansKR.woff') format('woff'),
-      url('../assets/fonts/subset-NotoSansKR.ttf') format('truetype');
-    font-display: block;
-  }
-
   /* Variables */
   :root {
     --dimmed-zindex: 10;
