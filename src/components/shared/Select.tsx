@@ -21,7 +21,7 @@ const BaseSelect = styled.select`
     color: #c0c4c7;
   }
 `
-export interface Option {
+export type Option = {
   label: string
   value: string | number | undefined
 }
