@@ -11,6 +11,7 @@ import Top from '@shared/Top'
 import ListRow from '@shared/ListRow'
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
+import SEO from '@shared/SEO'
 
 /**
  * 서버사이드에서는 window 객체가 없기 때문에 동적 import를 사용
@@ -36,6 +37,12 @@ export default function CardDetailPage({ initialCard }: { initialCard: Card }) {
 
   return (
     <div>
+      <SEO
+        title={`${corpName} ${name}`}
+        description={subTitle}
+        image="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20210813/P001501766.jpg/dims/resize/1280"
+      />
+
       <Top title={`${corpName} ${name}`} subTitle={subTitle} />
 
       <ul>
