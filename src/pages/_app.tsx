@@ -7,6 +7,7 @@ import globalStyles from '@styles/globalStyles'
 import Layout from '@shared/Layout'
 import Navbar from '@shared/Navbar'
 import { AlertContextProvider } from '@contexts/AlertContext'
+import ErrorBoundary from '@shared/ErrorBoundary'
 
 const client = new QueryClient({})
 
@@ -20,10 +21,12 @@ export default function App({
       <SessionProvider session={session}>
         <QueryClientProvider client={client}>
           <Hydrate state={dehydratedState}>
-            <AlertContextProvider>
-              <Navbar />
-              <Component {...pageProps} />
-            </AlertContextProvider>
+            <ErrorBoundary>
+              <AlertContextProvider>
+                <Navbar />
+                <Component {...pageProps} />
+              </AlertContextProvider>
+            </ErrorBoundary>
           </Hydrate>
         </QueryClientProvider>
       </SessionProvider>
