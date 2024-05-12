@@ -74,8 +74,8 @@ function NewPiggybankPage() {
   const minDate = useMemo(() => format(new Date(), 'yyyy-MM-dd'), [])
 
   return (
-    <div>
-      <Flex direction="column">
+    <div style={{ padding: 24 }}>
+      <Flex direction="column" css={{ gap: 12 }}>
         <TextField
           name="name"
           label="통장이름"
