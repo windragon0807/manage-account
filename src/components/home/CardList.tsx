@@ -54,9 +54,7 @@ function CardList() {
 export function CardListSkeleton() {
   return (
     <div style={{ padding: '24px 0' }}>
-      <Text
-        bold={true}
-        style={{ padding: '12px 24px', display: 'inline-block' }}>
+      <Text bold style={{ padding: '12px 24px', display: 'inline-block' }}>
         추천 카드
       </Text>
       {[...new Array(5)].map((_, idx) => (

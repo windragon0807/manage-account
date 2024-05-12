@@ -11,7 +11,7 @@ import { useMemo } from 'react'
 
 import { getTerms } from '@remote/account'
 import { User } from '@models/user'
-import useUser from '@/hooks/useUser'
+import useUser from '@hooks/useUser'
 import { 약관목록 } from '@constants/account'
 import Top from '@shared/Top'
 import Text from '@shared/Text'

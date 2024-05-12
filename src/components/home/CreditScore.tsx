@@ -19,7 +19,7 @@ export default function CreditScore() {
     <div style={{ padding: 24 }}>
       <Flex justify="space-between" align="center">
         <Flex direction="column">
-          <Text bold={true}>
+          <Text bold>
             나의 신용도를 증명하고 <br />
             점수를 올리세요
           </Text>

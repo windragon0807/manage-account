@@ -18,12 +18,8 @@ export default function SearchPage() {
 
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const { data } = useQuery(
-    ['cards', debouncedKeyword],
-    () => getSearchCards(debouncedKeyword),
-    {
-      enabled: debouncedKeyword !== '',
-    },
+  const { data } = useQuery(['cards', debouncedKeyword], () =>
+    getSearchCards(debouncedKeyword),
   )
 
   useEffect(() => {
@@ -58,7 +54,7 @@ export default function SearchPage() {
               right={
                 card.payback != null ? <Badge label={card.payback} /> : null
               }
-              withArrow={true}
+              withArrow
               onClick={() => {
                 navigate.push(`/card/${card.id}`)
               }}

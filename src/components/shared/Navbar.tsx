@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useCallback } from 'react'
@@ -19,10 +20,11 @@ export default function Navbar() {
       return (
         <Link href="/my">
           <Image
+            src={session.user?.image ?? ''}
+            alt="유저이미지"
             width={40}
             height={40}
-            alt="유저이미지"
-            src={session.user?.image ?? ''}
+            style={{ borderRadius: '50%' }}
           />
         </Link>
       )
@@ -41,11 +43,26 @@ export default function Navbar() {
 
   return (
     <Flex justify="space-between" align="center" css={navbarStyles}>
-      <Link href="/">MyAccount</Link>
+      <Link href="/">
+        <LogoBox>
+          <Image
+            src="https://cdn0.iconfinder.com/data/icons/business-and-management-flat-8/24/PROFILE_profile_picture_profile_icon_user_profile-512.png"
+            alt=""
+            width={35}
+            height={35}
+          />
+        </LogoBox>
+      </Link>
       {renderButton()}
     </Flex>
   )
 }
+
+const LogoBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`
 
 const navbarStyles = css`
   padding: 10px 24px;

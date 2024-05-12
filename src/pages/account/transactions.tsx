@@ -4,16 +4,18 @@ import { GetServerSidePropsContext } from 'next'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useCallback, useState } from 'react'
 import { parseISO, format } from 'date-fns'
+import { css } from '@emotion/react'
 
 import withAuth from '@components/shared/hocs/withAuth'
 import addDelimiter from '@utils/addDelimiter'
 import { getTransactions } from '@remote/transaction'
-import { User } from '@/models/user'
+import { User } from '@models/user'
 import useTransactions from '@components/account/hooks/useTransactions'
 import ListRow from '@shared/ListRow'
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
 import { TransactionFilterType } from '@models/transaction'
+import Button from '@components/shared/Button'
 
 const FILTERS: Array<{ label: string; value: TransactionFilterType }> = [
   {
@@ -53,14 +55,22 @@ function TransactionsPage() {
 
   return (
     <div>
-      <Flex as="ul" justify="flex-end" style={{ padding: 24 }}>
+      <Flex
+        as="ul"
+        justify="flex-end"
+        css={css`
+          padding: 24px;
+          gap: 6px;
+        `}>
         {FILTERS.map(filter => (
           <li
             key={filter.value}
             onClick={() => {
               setCurrentFilter(filter.value)
             }}>
-            {filter.label}
+            <Button weak={currentFilter !== filter.value}>
+              {filter.label}
+            </Button>
           </li>
         ))}
       </Flex>
@@ -89,7 +99,7 @@ function TransactionsPage() {
                 }
                 right={
                   <Flex direction="column" align="flex-end">
-                    <Text color={입금인가 ? 'blue' : 'red'} bold={true}>
+                    <Text color={입금인가 ? 'blue' : 'red'} bold>
                       {입금인가 ? '+' : '-'} {addDelimiter(transaction.amount)}
                       원
                     </Text>

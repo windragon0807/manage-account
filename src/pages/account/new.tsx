@@ -9,10 +9,10 @@ import ProgressBar from '@shared/ProgressBar'
 import Terms from '@components/account/Terms'
 import useUser from '@hooks/useUser'
 import { getTerms, setTerms, createAccount, getAccount } from '@remote/account'
-import { User } from '@/models/user'
+import { User } from '@models/user'
 import Form from '@components/account/Form'
 import { Account } from '@models/account'
-import FullPageLoader from '@/components/shared/FullPageLoader'
+import FullPageLoader from '@components/shared/FullPageLoader'
 
 const FixedBottomButton = dynamic(() => import('@shared/FixedBottomButton'))
 

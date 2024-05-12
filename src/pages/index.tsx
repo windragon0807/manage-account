@@ -9,7 +9,7 @@ import { CreditScoreSkeleton } from '@components/home/CreditScore'
 import { CardListSkeleton } from '@components/home/CardList'
 import Spacing from '@shared/Spacing'
 import { getAccount } from '@remote/account'
-import { User } from '@/models/user'
+import { User } from '@models/user'
 
 const EventBanners = dynamic(() => import('@components/home/EventBanners'), {
   ssr: false,

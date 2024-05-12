@@ -12,7 +12,7 @@ import { createPiggybank } from '@remote/piggybank'
 import { useAlertContext } from '@contexts/AlertContext'
 
 const FixedBottomButton = dynamic(
-  () => import('@/components/shared/FixedBottomButton'),
+  () => import('@components/shared/FixedBottomButton'),
   {
     ssr: false,
   },

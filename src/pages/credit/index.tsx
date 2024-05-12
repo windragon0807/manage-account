@@ -32,7 +32,7 @@ export default function CreditPage() {
       open({
         title: '로그인이 필요한 기능이에요',
         description:
-          '정확한 신용정보를 확인하기위해 로그인을 먼저 진행해주세요',
+          '정확한 신용정보를 확인하기 위해 로그인을 먼저 진행해주세요',
         onButtonClick: () => {
           navigate.push('/auth/signin')
         },
@@ -48,7 +48,7 @@ export default function CreditPage() {
     <div>
       <Spacing size={40} />
       <Flex align="center" direction="column">
-        <Text typography="t4" bold={true} textAlign="center">
+        <Text typography="t4" bold textAlign="center">
           나의 신용점수
         </Text>
         <Spacing size={10} />
@@ -63,7 +63,7 @@ export default function CreditPage() {
               subTitle="나에게 맞는 카드 찾아보기"
             />
           }
-          withArrow={true}
+          withArrow
           onClick={() => {
             navigate.push('/card')
           }}
@@ -75,7 +75,7 @@ export default function CreditPage() {
     <div>
       <Spacing size={40} />
       <Flex align="center" direction="column">
-        <Text typography="t4" bold={true} textAlign="center">
+        <Text typography="t4" bold textAlign="center">
           내 신용점수를
           <br /> 조회하고 관리해보세요
         </Text>
@@ -102,7 +102,7 @@ export default function CreditPage() {
         />
       </ul>
       <FixedBottomButton
-        label="30초만에 신용점수 조회하기"
+        label="30초 만에 신용점수 조회하기"
         onClick={handleCheck}
       />
     </div>

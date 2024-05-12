@@ -1,7 +1,8 @@
+import Image from 'next/image'
 import { signOut } from 'next-auth/react'
 import { useRouter } from 'next/router'
-import withAuth from '@shared/hocs/withAuth'
 
+import withAuth from '@shared/hocs/withAuth'
 import Flex from '@shared/Flex'
 import Spacing from '@shared/Spacing'
 import Button from '@shared/Button'
@@ -12,8 +13,15 @@ function MyPage() {
 
   return (
     <div>
-      <Spacing size={100} />
-      <Flex justify="center">
+      <Spacing size={60} />
+      <Flex direction="column" justify="center" align="center">
+        <Image
+          src="https://cdn0.iconfinder.com/data/icons/business-and-management-flat-8/24/PROFILE_profile_picture_profile_icon_user_profile-512.png"
+          alt=""
+          width={100}
+          height={100}
+        />
+        <Spacing size={40} />
         <Button onClick={() => signOut({ callbackUrl: '/' })}>로그아웃</Button>
       </Flex>
 

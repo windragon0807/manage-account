@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 
 import withAuth from '@components/shared/hocs/withAuth'
-import Spacing from '@/components/shared/Spacing'
+import Spacing from '@components/shared/Spacing'
 
 const MonthlyChart = dynamic(() => import('@components/account/MonthlyChart'))
 const PiggybankRow = dynamic(() => import('@components/account/PiggybankRow'))

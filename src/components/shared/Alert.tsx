@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { colors } from '@/styles/colorPalette'
+import { colors } from '@styles/colorPalette'
 import Text from './Text'
 import Dimmed from './Dimmed'
 import Flex from './Flex'

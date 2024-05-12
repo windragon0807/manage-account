@@ -7,7 +7,7 @@ import Text from '@shared/Text'
 import Flex from '@shared/Flex'
 import ListRow from '@shared/ListRow'
 import Button from '@shared/Button'
-import addDelimiter from '@/utils/addDelimiter'
+import addDelimiter from '@utils/addDelimiter'
 
 function Transactions() {
   const { data } = useTransactions({ suspense: true })
@@ -46,7 +46,7 @@ function Transactions() {
                 }
                 right={
                   <Flex direction="column" align="flex-end">
-                    <Text color={입금인가 ? 'blue' : 'red'} bold={true}>
+                    <Text color={입금인가 ? 'blue' : 'red'} bold>
                       {입금인가 ? '+' : '-'} {addDelimiter(transaction.amount)}
                       원
                     </Text>
@@ -59,9 +59,11 @@ function Transactions() {
         </ul>
       )}
       <Link href="/account/transactions">
-        <Button full={true} size="medium" weak={true}>
-          자세히보기
-        </Button>
+        <Flex style={{ padding: '12px 24px' }}>
+          <Button full size="medium" weak>
+            자세히보기
+          </Button>
+        </Flex>
       </Link>
     </div>
   )

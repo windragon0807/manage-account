@@ -9,7 +9,7 @@ import { getPiggybank } from '@remote/piggybank'
 import useUser from '@hooks/useUser'
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
-import addDelimiter from '@/utils/addDelimiter'
+import addDelimiter from '@utils/addDelimiter'
 
 function PiggybankRow() {
   const navigate = useRouter()
@@ -69,7 +69,7 @@ function PiggybankRow() {
           }
           contents={
             <Flex direction="column">
-              <Text typography="t4" bold={true}>
+              <Text typography="t4" bold>
                 D-{dday}
               </Text>
               <Text>{addDelimiter(goalAmount - balance)}원 남았어요</Text>
